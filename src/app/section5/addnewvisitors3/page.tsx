@@ -1,14 +1,14 @@
-"use client"; // Mark as Client Component
+"use client"; // Marks this as a client component
 
+import { useRouter } from "next/navigation";
 import Head from "next/head";
-import { useRouter } from "next/navigation"; // Import useRouter for navigation
 
 export default function AddNewVisitors2() {
   const router = useRouter();
 
   const handleContinue = () => {
-    // Navigate to the next page
-    router.push("/section5/addnewvisitors3");
+    console.log("Navigating to addnewvisitors3...");
+    router.push("/section5/addnewvisitors3"); // Correct path for App Router
   };
 
   return (

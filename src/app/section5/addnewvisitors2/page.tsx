@@ -1,6 +1,16 @@
+"use client"; // Mark as Client Component
+
 import Head from "next/head";
+import { useRouter } from "next/navigation"; // Import useRouter for navigation
 
 export default function AddNewVisitors2() {
+  const router = useRouter();
+
+  const handleContinue = () => {
+    // Navigate to the next page
+    router.push("/section5/addnewvisitors3");
+  };
+
   return (
     <>
       <Head>
@@ -19,7 +29,7 @@ export default function AddNewVisitors2() {
           <p style={styles.description}>
             You’ll need to enable location in order to use Creware Cowork’s location.
           </p>
-          <button style={styles.button}>CONTINUE</button>
+          <button style={styles.button} onClick={handleContinue}>CONTINUE</button>
         </main>
       </div>
     </>
@@ -38,7 +48,7 @@ const styles = {
   header: {
     width: "100%",
     padding: "16px",
-    backgroundColor: "#d32f2f", // Red header background
+    backgroundColor: "#d32f2f",
     color: "white",
     fontSize: "18px",
     fontWeight: "bold",
@@ -55,7 +65,7 @@ const styles = {
   iconPlaceholder: {
     width: "80px",
     height: "80px",
-    backgroundColor: "#e0e0e0", // Placeholder for the location icon
+    backgroundColor: "#e0e0e0",
     borderRadius: "50%",
     marginBottom: "16px",
   },
@@ -81,13 +91,12 @@ const styles = {
   button: {
     width: "100%",
     padding: "12px",
-    backgroundColor: "#007bff", // Blue button
+    backgroundColor: "#007bff",
     color: "white",
     fontSize: "16px",
     fontWeight: "bold",
     border: "none",
     borderRadius: "4px",
     cursor: "pointer",
-    textAlign: "center",
   },
 };
